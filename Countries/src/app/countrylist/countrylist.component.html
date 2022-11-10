@@ -1,0 +1,23 @@
+<div class="container">
+    <div class="row" *ngIf="countries.length > 0">
+        <div class="col-3 mt-2" *ngFor="let c of countries">
+            <div class="card" style="width: 300px; height: 100%;">
+                <img src="{{c.flag}}" class="card-img-top" alt="" width="200px" height="200px">
+                <div class="card-body">
+                  <h5 class="card-title">Country : {{c.name}}</h5>
+                  <p class="card-text">Capital :{{c.capital}}</p>
+                </div>
+                <ul class="list-group list-group-flush">
+                  <li class="list-group-item">Population : {{c.population}}</li>
+                  <li class="list-group-item">umericCode : {{c.numericCode}}</li>
+                </ul>
+                <div class="card-body">
+                    <button class="btn btn-outline-dark form-control" (click)="redirectToCountryDetail(c.id)">View Details</button>
+                </div>
+            </div>
+        </div>
+    <div *ngIf="countries.length == 0">
+        <p>No Countries Available</p>
+    </div>
+    </div>
+</div>

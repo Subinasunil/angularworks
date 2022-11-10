@@ -1,0 +1,7 @@
+<nav class="navbar bg-light">
+    <div class="container-fluid">
+      <span class="navbar-text" *ngFor="let c of categories">
+         <button class="btn btn-sm btn-dark" (click)="listByCategory(c)">{{c}}</button>
+      </span>
+    </div>
+  </nav>
