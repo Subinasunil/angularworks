@@ -19,9 +19,13 @@
           <form action="" [formGroup]="form" (ngSubmit)="addReview()">
             <div class="mb-3">
               <input type="text" class="form-control" formControlName="comment">
+              <div *ngIf="form.get('comment')?.touched && form.get('comment')?.invalid" class="alert alert-danger" >Invalid comment </div>
+
             </div>
             <div class="mb-3">
               <input type="text" class="form-control" formControlName="rating">
+              <div *ngIf="form.get('rating')?.touched && form.get('rating')?.invalid" class="alert alert-danger" >Invalid Rating </div>
+
             </div>
             <div class="mb-3">
               <button type="submit">Review</button>

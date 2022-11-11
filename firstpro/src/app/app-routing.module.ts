@@ -4,6 +4,7 @@ import { AddComponent } from './add/add.component';
 import { CubeComponent } from './cube/cube.component';
 import { FactorialComponent } from './factorial/factorial.component';
 import { IntrestComponent } from './intrest/intrest.component';
+import { MultiplicationComponent } from './multiplication/multiplication.component';
 import { SmartsubComponent } from './smartsub/smartsub.component';
 
 const routes: Routes = [
@@ -11,7 +12,8 @@ const routes: Routes = [
   {path:"cube",component:CubeComponent},
   {path:"sub",component:SmartsubComponent},
   {path:"factorial",component:FactorialComponent},
-  {path:"intrest",component:IntrestComponent}
+  {path:"intrest",component:IntrestComponent},
+  {path:"multiply",component:MultiplicationComponent}
 ];
 
 @NgModule({

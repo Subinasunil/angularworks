@@ -28,7 +28,7 @@ import { MultiplicationComponent } from './multiplication/multiplication.compone
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {ActivatedRoute } from '@angular/router'
 import { ProductsService } from '../service/products.service';
-import {FormControl,FormGroup} from '@angular/forms';
+import {FormControl,FormGroup,Validator,Validators} from '@angular/forms';
 
 @Component({
   selector: 'app-productdetails',
@@ -11,10 +11,16 @@ import {FormControl,FormGroup} from '@angular/forms';
 export class ProductdetailsComponent implements OnInit {
   product:any;
   form=new FormGroup(
-    {"comment":new FormControl(),
-     "rating":new FormControl()
+    {"comment":new FormControl("",Validators.required),
+     "rating":new FormControl("",Validators.required)
     }
   )
+  get comment():any{
+    return this.form.get("comment")?.value
+  }
+  get rating():any{
+  return this.form.get("rating")?.value
+  }
 
   constructor(private router:ActivatedRoute,private service:ProductsService) { }
 
@@ -25,6 +31,10 @@ export class ProductdetailsComponent implements OnInit {
   }
   addReview(){
     console.log(this.form.value);
+    console.log(this.comment);
+    console.log(this.rating);
+    
+    
     
   }
 }
